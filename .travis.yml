@@ -46,5 +46,5 @@ script:
   - cp -r mipmap-hdpi/ mipmap/
   - cd mipmap/
   - mv  ic_launcher.png icon.png
-  - cd $HOME/demo/
+  - cd $HOME/demo/ 
   - ionic cordova build android
