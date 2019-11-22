@@ -1,0 +1,50 @@
+os: linux
+language: android
+dist: trusty
+android:
+  components:
+    # Uncomment the lines below if you want to
+    # use the latest revision of Android SDK Tools
+    - tools
+    - platform-tools
+
+    # The BuildTools version used by your project
+    - build-tools-26.0.2
+
+    # The SDK version used to compile your project
+    - android-26
+
+    # Additional components
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+addons:
+      apt:
+        sources:
+        - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
+          key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
+        packages:
+        - yarn
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
+before_install:
+  - yarn global add ionic cordova
+script:
+  - git clone https://github.com/alxsmora1/ionic4-example-background-geolocation.git demo/
+  - cd demo/
+  - npm install
+  - ionic cordova platform add android
+  - ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation
+  - npm install @ionic-native/background-geolocation
+  - cd platforms\android\app\src\main\res
+  - cp -r mipmap-hdpi/ mipmap/
+  - cd mipmap/
+  - mv  ic_launcher.png icon.png
+  - cd $HOME/demo/
+  - ionic cordova build android
