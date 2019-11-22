@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="locate"></ion-icon> GPS Tracker
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section>
+    <ion-button color="success" expand="block" fill="solid" (click)="initTracking()"><ion-icon name="play"></ion-icon> Activar el seguimiento GPS</ion-button>
+  </section>
+  <section>
+      <ion-button color="danger" expand="block" fill="solid" (click)="stopTracking()"><ion-icon name="square"></ion-icon> Detener el seguimiento GPS</ion-button>
+  </section>
+</ion-content>
