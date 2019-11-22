@@ -25,6 +25,7 @@ addons:
         - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
           key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
         packages:
+        - nvm install 8
         - yarn
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
