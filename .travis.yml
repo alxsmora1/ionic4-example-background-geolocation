@@ -24,6 +24,7 @@ addons:
         - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
           key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
         packages:
+        - nvm install 8
         - yarn
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -38,7 +39,7 @@ before_install:
 script:
   - git clone https://github.com/alxsmora1/ionic4-example-background-geolocation.git demo/
   - cd demo/
-  - npm install
+  - yarn install
   - ionic cordova platform add android
   - ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation
   - npm install @ionic-native/background-geolocation
