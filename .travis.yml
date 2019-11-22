@@ -19,14 +19,9 @@ android:
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-addons:
-      apt:
-        sources:
-        - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
-          key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
-        packages:
-        - nvm install 8
-        - yarn
+language: node_js
+node_js:
+  - 7
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -36,11 +31,11 @@ cache:
     - $HOME/.gradle/wrapper/
     - $HOME/.android/build-cache
 before_install:
-  - yarn global add ionic cordova
+  - npm install -g ionic cordova
 script:
   - git clone https://github.com/alxsmora1/ionic4-example-background-geolocation.git demo/
   - cd demo/
-  - yarn install
+  - npm install
   - ionic cordova platform add android
   - ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation
   - npm install @ionic-native/background-geolocation
