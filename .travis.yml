@@ -39,7 +39,7 @@ script:
   - ionic cordova platform add android
   - ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation
   - npm install @ionic-native/background-geolocation
-  - cd platforms\android\app\src\main\res
+  - cd platforms/android/app/src/main/res
   - cp -r mipmap-hdpi/ mipmap/
   - cd mipmap/
   - mv  ic_launcher.png icon.png
