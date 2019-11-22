@@ -34,7 +34,7 @@ export class HomePage {
       postTemplate: {
         lat: '@latitude',
         lng: '@longitude',
-        test: '1' // you can also add your own properties
+        test: '1'  //you can also add your own properties
       }
     };
 
