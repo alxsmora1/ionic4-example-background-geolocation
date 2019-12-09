@@ -29,7 +29,7 @@ cache:
     - $HOME/.gradle/wrapper/
     - $HOME/.android/build-cache
 before_install:
-  - nvm install v4
+  - nvm install v12
   - npm install -g ionic cordova
 script:
   - git clone https://github.com/alxsmora1/ionic4-example-background-geolocation.git demo/
