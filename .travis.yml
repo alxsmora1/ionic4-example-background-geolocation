@@ -50,15 +50,9 @@ script:
   - cd platforms/android/app/src/main/res
   - cp -r mipmap-hdpi/ mipmap/
   - cd mipmap/
-<<<<<<< HEAD
   - mv ic_launcher.png icon.png
   - cd $HOME/demo/
   - ionic cordova build android
 env:
   global:
   - JAVA_HOME=/usr/lib/jvm/java-8-oracle
-=======
-  - mv  ic_launcher.png icon.png
-  - cd $HOME/demo/ 
-  - ionic cordova build android
->>>>>>> 508be56aa217a74b5cf1c7be8794ba0d1232585e
