@@ -1,6 +1,9 @@
 os: linux
 sudo: false
 language: android
+jdk: oraclejdk9
+node_js:
+  - 12
 dist: trusty
 android:
   components:
@@ -19,17 +22,6 @@ android:
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-addons:
-    apt:
-      sources:
-      - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
-        key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
-      packages:
-      - oracle-java9-installer
-      - oracle-java9-set-default
-language: node_js
-node_js:
-  - 12
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
