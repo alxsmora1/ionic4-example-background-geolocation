@@ -29,7 +29,7 @@ addons:
       - oracle-java8-set-default
 language: node_js
 node_js:
-  - 8
+  - 12
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -50,7 +50,7 @@ script:
   - cd platforms/android/app/src/main/res
   - cp -r mipmap-hdpi/ mipmap/
   - cd mipmap/
-  - mv  ic_launcher.png icon.png
+  - mv ic_launcher.png icon.png
   - cd $HOME/demo/
   - ionic cordova build android
 env:
