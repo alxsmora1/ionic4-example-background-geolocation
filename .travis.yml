@@ -44,6 +44,3 @@ script:
   - mv ic_launcher.png icon.png
   - cd $HOME/demo/
   - ionic cordova build android
-env:
-  global:
-  - JAVA_HOME=/usr/lib/jvm/java-8-oracle
