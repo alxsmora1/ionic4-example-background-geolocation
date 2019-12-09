@@ -19,6 +19,14 @@ android:
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
+addons:
+    apt:
+      sources:
+      - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
+        key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
+      packages:
+      - oracle-java8-installer
+      - oracle-java8-set-default
 language: node_js
 node_js:
   - 8
@@ -43,5 +51,8 @@ script:
   - cp -r mipmap-hdpi/ mipmap/
   - cd mipmap/
   - mv  ic_launcher.png icon.png
-  - cd $HOME/demo/ 
+  - cd $HOME/demo/
   - ionic cordova build android
+env:
+  global:
+  - JAVA_HOME=/usr/lib/jvm/java-8-oracle
