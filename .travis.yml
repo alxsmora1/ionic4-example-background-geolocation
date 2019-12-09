@@ -25,8 +25,8 @@ addons:
       - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
         key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
       packages:
-      - oracle-java8-installer
-      - oracle-java8-set-default
+      - oracle-java9-installer
+      - oracle-java9-set-default
 language: node_js
 node_js:
   - 12
