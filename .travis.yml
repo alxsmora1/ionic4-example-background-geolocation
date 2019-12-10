@@ -1,0 +1,41 @@
+os: linux
+sudo: false
+language: android
+jdk: oraclejdk8
+dist: trusty
+android:
+  components:
+    - build-tools-26.0.2
+    - android-26
+    - add-on
+    - extra
+  licenses:
+    - "android-sdk-preview-license-52d11cd2"
+    - "android-sdk-license-.+"
+    - "google-gdk-license-.+"
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
+before_install:
+  - yes | sdkmanager "platforms;android-28"
+  - nvm install v12
+  - npm install -g ionic cordova
+  - npm i -g cordova-res
+script:
+  - git clone https://github.com/alxsmora1/ionic4-example-background-geolocation.git demo/
+  - cd demo/
+  - npm install
+  - ionic cordova platform add android
+  - ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation
+  - npm install @ionic-native/background-geolocation
+  - cd platforms/android/app/src/main/res
+  - cp -r mipmap-hdpi/ mipmap/
+  - cd mipmap/
+  - mv ic_launcher.png icon.png
+  - cd /home/travis/build/alxsmora1/ionic4-example-background-geolocation/demo/
+  - ionic cordova build android
