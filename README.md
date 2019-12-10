@@ -1,4 +1,8 @@
 # ionic4-example-background-geolocation
+
+[![Version](https://img.shields.io/badge/version-1.0.1-blue)](https://img.shields.io/badge/version-1.0.1-blue)
+[![Build Status](https://travis-ci.org/alxsmora1/ionic4-example-background-geolocation.svg?branch=master)](https://travis-ci.org/alxsmora1/ionic4-example-background-geolocation)
+
 Ejemplo de uso del plugin background geolocation en Ionic 4 Angular.
 
 Se desarrollo un ejemplo de la implementación del plugin Background Geolocation sobre Ionic 4 Angular.
