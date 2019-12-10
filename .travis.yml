@@ -25,6 +25,7 @@ before_install:
   - yes | sdkmanager "platforms;android-28"
   - nvm install v12
   - npm install -g ionic cordova
+  - npm i -g cordova-res
 script:
   - git clone https://github.com/alxsmora1/ionic4-example-background-geolocation.git demo/
   - cd demo/
@@ -36,5 +37,5 @@ script:
   - cp -r mipmap-hdpi/ mipmap/
   - cd mipmap/
   - mv ic_launcher.png icon.png
-  - cd $HOME/demo/
+  - cd /home/travis/build/alxsmora1/ionic4-example-background-geolocation/demo/
   - ionic cordova build android
