@@ -13,6 +13,10 @@ La app se compilo solamente para android, así que el resultado para IOS no esta
 ```console
 foo@bar:~$ npm install
 ```
+* Agrega los recursos de cordova al proyecto y sus archivos base:
+```console
+foo@bar:~$ ionic integrations enable cordova --add
+```
 * Agregar el plugin background geolocation desde consola con:
 ```console
 foo@bar:~$ ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation
