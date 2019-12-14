@@ -34,6 +34,7 @@ script:
   - git clone https://github.com/alxsmora1/ionic4-example-background-geolocation.git demo/
   - cd demo/
   - npm install
+  - ionic integrations enable cordova --add
   - ionic cordova platform add android
   - cd platforms/android/app/src/main/res
   - cp -r mipmap-hdpi/ mipmap/
