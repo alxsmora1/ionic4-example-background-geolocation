@@ -34,7 +34,6 @@ script:
   - git clone https://github.com/alxsmora1/ionic4-example-background-geolocation.git demo/
   - cd demo/
   - npm install
-  - ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation
   - npm install @ionic-native/background-geolocation
   - ionic cordova platform add android
   - cd platforms/android/app/src/main/res
