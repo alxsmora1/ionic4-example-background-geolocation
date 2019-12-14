@@ -1,5 +1,7 @@
 {
   "name": "ionic4-example-background-geolocation",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -5,10 +5,14 @@ jdk: oraclejdk8
 dist: trusty
 android:
   components:
-    - build-tools-26.0.2
-    - android-26
-    - add-on
-    - extra
+    - tools
+      - platform-tools
+      - tools
+      - build-tools-26.0.2
+      - android-28
+      - extra-google-google_play_services
+      - extra-google-m2repository
+      - extra-android-m2repository
   licenses:
     - "android-sdk-preview-license-52d11cd2"
     - "android-sdk-license-.+"
@@ -30,9 +34,9 @@ script:
   - git clone https://github.com/alxsmora1/ionic4-example-background-geolocation.git demo/
   - cd demo/
   - npm install
-  - ionic cordova platform add android
   - ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation
   - npm install @ionic-native/background-geolocation
+  - ionic cordova platform add android
   - cd platforms/android/app/src/main/res
   - cp -r mipmap-hdpi/ mipmap/
   - cd mipmap/
