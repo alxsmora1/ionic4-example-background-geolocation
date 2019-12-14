@@ -35,6 +35,8 @@ script:
   - cd demo/
   - npm install
   - ionic integrations enable cordova --add
+  - ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation
+  - npm install @ionic-native/background-geolocation
   - ionic cordova platform add android
   - cd platforms/android/app/src/main/res
   - cp -r mipmap-hdpi/ mipmap/
