@@ -13,14 +13,14 @@ La app se compilo solamente para android, así que el resultado para IOS no esta
 ```console
 foo@bar:~$ npm install
 ```
-* Agregar la plataforma Android a traves de la consola con:
-```console
-foo@bar:~$ ionic cordova platform add android
-```
 * Agregar el plugin background geolocation desde consola con:
 ```console
 foo@bar:~$ ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation
 foo@bar:~$ npm install @ionic-native/background-geolocation
+```
+* Agregar la plataforma Android a traves de la consola con:
+```console
+foo@bar:~$ ionic cordova platform add android
 ```
 * Se tiene que crear la carpeta mipmap que contenga el archivo icon.png dentro, en: platforms\android\app\src\main\res, de lo contrario arrojará un error el plugin background geolocation durante la compilación.
 
